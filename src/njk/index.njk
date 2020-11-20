@@ -27,15 +27,19 @@
     <h2>Discography</h2>
     <p>Here is a collection of Queen's discography.</p>
     <hr>
-    {% for discography in queen.discography %}
-      <h3>
-        <a href="{{ store.url }}" target="_blank">{{ store.name }}</a>
-      </h3>
-      <p>{{ store.address}},
-        {{ store.city }},
-        {{ store.state }}
-        {{ store.zip }}</p>
-      <hr>
-    {% endfor %}
-  </div>
-{% endblock %}
+    <div class="row">
+      {% for albums in queen.discography %}
+        <div class="col-sm-6 col-lg-4">
+          <div class="card mb-4 bg-light border-success">
+            <div class="card-body">
+              <h5 class="card title">{{albums.title}}</h5>
+              <h6 class="card-title">{{albums.year}}</h6>
+              <p class="card-image">{{albums.image}}</p>
+              <a href="{{ queen.source }}" target="blank">Source</a>
+            </div>
+          </div>
+        </div>
+        <hr>
+      {% endfor %}
+    </div>
+  {% endblock %}
