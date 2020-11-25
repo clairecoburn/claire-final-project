@@ -1,45 +1,40 @@
 {% extends '_templates/base.njk' %}
-
 {% block page_title %}Queen{% endblock %}
 
-{% block page_description %}The index search description for this page goes here.{% endblock %}
-
 {% block content %}
-  <div class="jumbotron banner text-center">
-    <h1>Queen</h1>
-    <p>The greatest rock band of all time!</p>
-  </div>
   <div class="container">
     <h1>Queen</h1>
     <p>Queen are a British rock band formed in London in 1970. Their classic line-up was Freddie Mercury, Brian May, Roger Taylor and John Deacon.</p>
     <h2>Original Members</h2>
     <p>Here are the four original members of Queen.</p>
     <div class="row">
-      {% for description in queen.members %}
-        <div class="col">
-          <h5 class="card title">{{description.name}}</h5>
-          <img src="..img/members{{ member.image }}.jpg" alt="" class="img-fluid">
-          <a href="member/{{ description.slug }}.html">Read More</a>
+      {% for member in queen.members %}
+        <div class="col-sm-6">
+          <img src="img/members/{{ member.slug }}-bw.jpg" alt="" class="img-fluid">
+          <h3>
+            <a href="member/{{ member.slug }}.html">{{ member.name }}</a>
+          </h3>
         </div>
       {% endfor %}
     </div>
   </div>
-  <h2>Discography</h2>
-  <p>Here is a collection of Queen's discography.</p>
-  <hr>
-  <div class="row">
-    {% for albums in queen.discography %}
-      <div class="col-sm-6 col-lg-4">
-        <div class="card mb-4 bg-light border-success">
-          <div class="card-body">
-            <h5 class="card title">{{albums.title}}</h5>
-            <h6 class="card-title">{{albums.year}}</h6>
-            <p class="card-image">{{albums.image}}</p>
-            <a href="discography.html">Source</a>
-          </div>
+</div>
+<h2>Discography</h2>
+<p>Here is a collection of Queen's discography.</p>
+<hr>
+<div class="row">
+  {% for albums in queen.discography %}
+    <div class="col-sm-6 col-lg-4">
+      <div class="card mb-4 bg-light border-success">
+        <div class="card-body">
+          <h5 class="card title">{{albums.title}}</h5>
+          <h6 class="card-title">{{albums.year}}</h6>
+          <img class="card-img-top" src="img/discs/{{albums.image}}" alt="">
+          <a href="discography.html">Source</a>
         </div>
       </div>
-      <hr>
-    {% endfor %}
-  </div>
+    </div>
+    <hr>
+  {% endfor %}
+</div>
 {% endblock %}
