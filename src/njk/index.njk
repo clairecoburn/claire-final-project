@@ -18,7 +18,7 @@
       {% for description in queen.members %}
         <div class="col">
           <h5 class="card title">{{description.name}}</h5>
-          <img src="img/{{ members.image }}.jpg" alt="" class="img-fluid">
+          <img src="..img/members{{ member.image }}.jpg" alt="" class="img-fluid">
           <a href="member/{{ description.slug }}.html">Read More</a>
         </div>
       {% endfor %}
