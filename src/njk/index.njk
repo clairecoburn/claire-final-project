@@ -21,24 +21,23 @@
       {% endfor %}
     </div>
   </div>
-</div>
 
-<h2>Discography</h2>
-<p>Here is a collection of Queen's discography.</p>
-<hr>
-<div class="row">
-  {% for albums in queen.discography %}
-    <div class="col-sm-6 col-lg-4">
-      <div class="card mb-4 bg-light border-success">
-        <div class="card-body">
-          <h5 class="card title">{{albums.title}}</h5>
-          <h6 class="card-title">{{albums.year}}</h6>
-          <img class="card-img-top" src="img/discs/{{albums.image}}" alt="">
-          <a href="discography.html">Source</a>
+  <h2>Discography</h2>
+  <p>Here is a collection of Queen's discography.</p>
+  <hr>
+  <div class="row">
+    {% for albums in queen.discography %}
+      <div class="col-sm-6 col-lg-4">
+        <div class="card mb-4 bg-light border-success">
+          <div class="card-body">
+            <h5 class="card title">{{albums.title}}</h5>
+            <h6 class="card-title">{{albums.year}}</h6>
+            <img class="card-img-top" src="img/discs/{{albums.image}}" alt="">
+            <a href="discography.html">Source</a>
+          </div>
         </div>
       </div>
-    </div>
-    <hr>
-  {% endfor %}
-</div>
+      <hr>
+    {% endfor %}
+  </div>
 {% endblock %}
